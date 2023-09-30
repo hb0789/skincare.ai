@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
-export default function NumCard(props) {
+interface cardProp{
+    number: number;
+    suffix: string;
+    desc: string;
+  }
+
+export default function NumCard(props : cardProp) {
   const [counterOn, setCounterOn] = useState(false);
   return (
     <div className="numbers-card">

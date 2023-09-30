@@ -1,6 +1,11 @@
 import React from 'react'
 
-export default function Card(props) {
+interface cardProp{
+  title:string;
+  description : string;
+  img : string;
+}
+export default function Card(props : cardProp) {
   return (
     <div className='service-card'>
       <div className='card-image-div'>
