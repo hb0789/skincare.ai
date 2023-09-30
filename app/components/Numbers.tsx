@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
-import CountUp from "react-countup";
-import ScrollTrigger from "react-scroll-trigger";
 import NumCard from "../utils/NumCard";
 
 const poppins = Poppins({
