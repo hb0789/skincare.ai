@@ -5,7 +5,7 @@ import AI from "../media/AI.png";
 import doctor from "../media/doctor.jpg";
 import bot from "../media/bot.jpg";
 import Numbers from "./Numbers";
-
+import "../Style/ServiceStyles.css";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",

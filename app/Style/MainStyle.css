@@ -1,0 +1,43 @@
+.home-background {
+    height: 100vh;
+    position: relative;
+  }
+  .home-title {
+    font-size: 4.5rem;
+    font-weight: 600;
+    padding-left: 8vw;
+    padding-top: 12vh;
+  }
+  
+  .home-description {
+    line-height: 0%;
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+  .home-button-div {
+    padding-left: 12vw;
+    position: absolute;
+  }
+  .home-button {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 1px solid;
+    background-color: #8856f5b2;
+    border-radius: 40px;
+    font-size: 30px;
+    color: white;
+    transition-duration: 0.2s;
+  }
+  .home-button:hover {
+    transition-duration: 0.2s;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 1px solid;
+    background-color: #8856f5;
+    border-radius: 40px;
+    font-size: 30px;
+    color: white;
+    box-shadow: inset;
+  }  

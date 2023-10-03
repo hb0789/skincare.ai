@@ -2,7 +2,7 @@ import React from 'react'
 import { Inter } from 'next/font/google'
 import { Parallax } from 'react-parallax';
 import Background from '../media/download.png'
-
+import "../Style/MainStyle.css";
 const inter = Inter({
   subsets: ['latin'],
   weight: '400'

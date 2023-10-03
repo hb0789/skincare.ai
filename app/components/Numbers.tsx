@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 import NumCard from "../utils/NumCard";
-
+import "../Style/NumCardStyle.css"
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",

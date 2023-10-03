@@ -1,0 +1,34 @@
+
+.numbers-card{
+    margin: 2vh;
+    max-width: 15vh;
+    margin: 5vh auto;
+  }
+  
+  .numbers-main
+  {
+    height: auto;
+    background-color:#7d6ffc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .num-card-title{
+    font-size: 6vh;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .num-card-desc{
+    font-weight: 100;
+    font-size: 2vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
