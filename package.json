@@ -12,6 +12,7 @@
     "@next/font": "^13.5.3",
     "@react-spring/parallax": "^9.7.3",
     "next": "latest",
+    "node": "^20.7.0",
     "react": "latest",
     "react-countup": "^6.4.2",
     "react-dom": "latest",

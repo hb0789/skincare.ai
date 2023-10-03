@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 40vh;
+    margin: 2vh;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-image-div {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .card-image {
+    max-height: 20vh;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+  }
+  .card-title {
+    margin-top: 2vh;
+    font-size: 2vh;
+    font-weight: 500;
+  }
+  
+  .card-description {
+    font-size: 1.8vh;
+    font-weight: 350;
+    max-width: 30vh;
+  }
