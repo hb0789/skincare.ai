@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-
-
+import "../Style/NumCardStyle.css";
+import "../Style/Scroll.css";
 export default function NumCard(props) {
   const [counterOn, setCounterOn] = useState(false);
   return (
