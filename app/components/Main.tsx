@@ -13,7 +13,7 @@ export default function Main() {
   const imageUrl = BackgroundPhoto.src;
   return (
     <Parallax
-      className="home-background"
+      className="home-background" 
       bgImage={imageUrl}
       bgClassName="home-background"
       strength={600}

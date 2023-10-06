@@ -12,6 +12,7 @@
     "@heroicons/react": "^2.0.18",
     "@next/font": "^13.5.3",
     "@react-spring/parallax": "^9.7.3",
+    "bootstrap": "^5.3.2",
     "next": "latest",
     "node": "^20.7.0",
     "react": "latest",
