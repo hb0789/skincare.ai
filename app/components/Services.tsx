@@ -16,7 +16,7 @@ export default function Services() {
   const docurl = doctor.src;
   const boturl = bot.src;
   return (
-    <div className="service-main">
+    <div className="service-main"  id="services">
       <div className={"poppins.className service-title"}>
         SERVICES <br />
       </div>
