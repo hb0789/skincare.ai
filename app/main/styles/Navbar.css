@@ -1,0 +1,18 @@
+.navbar-main
+{
+    height: 8vh;
+    background-color: #080808;
+    border-bottom: 1px solid;
+    width: 100%;
+    color: #ffffff;
+    font-size: 5vh;
+    padding-left: 4vw;
+    border-color: white;
+    display: flex;
+}
+
+.navbar-profile
+{
+    text-align: right;
+}
+
