@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 export default function Home() {
   return (
     <>
-      <Main/>
+      <Main />      
       <Services/>
       <Numbers/>
       <Footer />
