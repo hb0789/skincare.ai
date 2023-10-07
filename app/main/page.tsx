@@ -9,6 +9,7 @@ export default function page() {
   return (
     <div className='app-background'>
         <Navbar/>
+        <Body/>
     </div>
   )
 }

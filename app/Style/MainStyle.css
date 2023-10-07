@@ -1,8 +1,6 @@
 .home-background {
-    background-position: bottom;
-    object-fit: none; 
+    object-fit: cover;
     height: 100vh;
-    background-position: center center;
   }
 
 
@@ -58,18 +56,14 @@
     box-shadow: inset;
   }  
 
-
-
-
-
-
   @media screen and (max-width: 768px)
   {
     .home-background {
       background-position: bottom;
       object-fit: none; 
       height: 100vh;
-      background-position: center center;
+      background-position: center;
+      top: center;
     }
   
   
