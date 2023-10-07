@@ -2,9 +2,15 @@
 import React, { useState, useEffect } from "react";
 import "../Style/Navbar.css";
 
-
+const scrollToSection = (sectionId: string) => {
+  const section = document.querySelector(`#${sectionId}`);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const Navbar: React.FC = () => {
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -25,6 +31,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', navChange);
   }, []);
  
+
   return (
     <nav 
       className={nav ? "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style" : "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style active"}
@@ -72,7 +79,8 @@ const Navbar: React.FC = () => {
           >
             <li>
               <a
-                href="#"
+                
+                 
                 className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 
                   md:dark:hover:text-gray-900
                   md:dark:text-blue-500
@@ -84,7 +92,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                 
                 className="block py-2 pl-3 pr-4 text-gray-100 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 About
@@ -92,7 +100,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#services"
+                href="#" onClick={(e) => { scrollToSection('services'); e.preventDefault(); }} 
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Services
@@ -100,7 +108,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Testimonials
@@ -108,7 +116,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                 
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Client
@@ -116,7 +124,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#foot"
+                href="#" onClick={(e) => { scrollToSection('foot'); e.preventDefault(); }} 
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500
                   md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
               >
