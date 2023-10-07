@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import "../Style/Navbar.css";
+
+
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,7 +21,9 @@ const Navbar: React.FC = () => {
       setNav(false);
     }
   }
-  window.addEventListener('scroll',navChange);
+  useEffect(() => {
+    window.addEventListener('scroll', navChange);
+  }, []);
  
   return (
     <nav 
