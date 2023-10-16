@@ -6,5 +6,12 @@
 
 .nav-style
 {
+    background-color: #796bf8;
     transition-duration: 0.2s;
+    backdrop-filter: blur(2px);
+}
+
+.title-style
+{
+    color: white;
 }

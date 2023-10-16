@@ -9,6 +9,7 @@ const poppins = Poppins({
 
 export default function Numbers() {
   const [counterOn, setCounterOn] = useState(false);
+
   return (
     <>
       <div className="numbers-main">

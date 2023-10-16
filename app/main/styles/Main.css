@@ -3,3 +3,14 @@
     background-color: #141616;
     height: 100vh;
 }
+
+
+.main-signin-button
+{
+    background-color: white;
+    margin-right: 100px;
+    font-size: large;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blue;
+}

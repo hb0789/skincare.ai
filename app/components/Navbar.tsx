@@ -1,16 +1,15 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import "../Style/Navbar.css";
 
 const scrollToSection = (sectionId: string) => {
   const section = document.querySelector(`#${sectionId}`);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
   }
 };
 
 const Navbar: React.FC = () => {
-
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -19,26 +18,33 @@ const Navbar: React.FC = () => {
   };
 
   const navChange = () => {
-    if(window.scrollY >= 80)
-    {
+    if (window.scrollY >= 80) {
       setNav(true);
-    }
-    else{
+    } else {
       setNav(false);
     }
-  }
+  };
   useEffect(() => {
-    window.addEventListener('scroll', navChange);
+    window.addEventListener("scroll", navChange);
   }, []);
- 
 
   return (
-    <nav 
-      className={nav ? "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style" : "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style active"}
+    <nav
+      className={
+        nav
+          ? "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style"
+          : "bg-white border-gray-200 dark:bg-blue-100 fixed top-0 w-full z-10 nav-style active"
+      }
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-400">
+          <span
+            className={
+              nav
+                ? "self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-400 title-style"
+                : "self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-400"
+            }
+          >
             NEURALNEXUS
           </span>
         </a>
@@ -79,54 +85,49 @@ const Navbar: React.FC = () => {
           >
             <li>
               <a
-                
-                 
-                className="block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 
-                  md:dark:hover:text-gray-900
-                  md:dark:text-blue-500
-                  "
+                className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}
                 aria-current="page"
               >
                 Home
               </a>
             </li>
             <li>
-              <a
-                 
-                className="block py-2 pl-3 pr-4 text-gray-100 rounded hover:bg-gray-900 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                About
+            <a
+                className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}
+                aria-current="page"
+              >                About
               </a>
             </li>
             <li>
               <a
-                href="#" onClick={(e) => { scrollToSection('services'); e.preventDefault(); }} 
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
+                href="#"
+                onClick={(e) => {
+                  scrollToSection("services");
+                  e.preventDefault();
+                }}
+                className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}
               >
                 Services
               </a>
             </li>
             <li>
-              <a
-                
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
+              <a className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}>
                 Testimonials
               </a>
             </li>
             <li>
-              <a
-                 
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Client
+              <a className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}>                Client
               </a>
             </li>
             <li>
               <a
-                href="#" onClick={(e) => { scrollToSection('foot'); e.preventDefault(); }} 
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-500
-                  md:dark:hover:text-gray-900 dark:hover:bg-blue-300 dark:hover:text-white md:dark:hover:bg-transparent"
+                href="#"
+                onClick={(e) => {
+                  scrollToSection("foot");
+                  e.preventDefault();
+                }}
+                className={nav ? "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-white" : "block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-blue-500 md:dark:hover:text-gray-900 md:dark:text-blue-500"}
+
               >
                 Contact
               </a>
