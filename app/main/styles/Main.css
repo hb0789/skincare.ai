@@ -14,3 +14,24 @@
     border-radius: 5px;
     background-color: blue;
 }
+
+.profile-photo
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-photo-div
+{
+    height: 50px;
+    
+    margin-right: 100px;
+    width: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}

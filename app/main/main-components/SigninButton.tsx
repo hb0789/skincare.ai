@@ -8,11 +8,11 @@ const SigninButton = () => {
     if(session && session.user)
     {
         return(
-            <div className='flex gap-4 ml-auto'>
-                <p className='text-white'>Welcome! {session.user.name}</p>
+            <div className='flex gap-4 ml-auto text-2xl items-center'>
+              {session.user.name}
                 <button onClick={() => signOut()}>
-                <div className='main-signin-button'>
-                  Sign out
+                <div className='profile-photo-div'>
+                <img className= "profile-photo" src={session.user.image ?? ""}/>
                 </div>
                 </button>
             </div>
