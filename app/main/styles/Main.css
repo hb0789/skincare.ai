@@ -35,3 +35,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.user-info
+{
+    align-items: center;
+    color: white;
+    text-align: center;
+}
