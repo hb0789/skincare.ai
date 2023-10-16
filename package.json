@@ -17,6 +17,7 @@
     "next": "latest",
     "next-auth": "^4.23.2",
     "node": "^20.7.0",
+    "openssl": "^2.0.0",
     "react": "latest",
     "react-countup": "^6.4.2",
     "react-dom": "latest",
