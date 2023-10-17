@@ -13,7 +13,7 @@ import {
   } from "firebase/firestore";
 import { db } from '@/app/HOCS/firebase';
 
-const page = () => {
+const Page = () => {
     const { data: session, status } = useSession();
     const [items, setItems] = useState([]);
     const [profilePhoto, setProfilePhoto] = useState("");
@@ -49,5 +49,5 @@ const page = () => {
     )
   }
   
-  export default page;
+  export default Page;
   
