@@ -9,6 +9,7 @@
     padding-left: 4vw;
     border-color: white;
     display: flex;
+    position: absolute;
 }
 
 .navbar-profile

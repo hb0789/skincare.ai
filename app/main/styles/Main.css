@@ -69,3 +69,19 @@
     border-radius: 5px;
     background-color: red;
 }
+
+
+.profile-left
+{
+    width: 30vw;
+    height: 100%;
+    padding-top: 20vh;
+    padding-left: 20vh;
+}
+
+.profile-photo-main
+{
+    border-radius: 50%;
+    height: 30vh;
+    image-rendering: auto;
+}
