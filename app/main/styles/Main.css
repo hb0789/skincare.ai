@@ -42,3 +42,30 @@
     color: white;
     text-align: center;
 }
+
+.dropdown-menu
+{
+    height: 200px;
+    width: auto;
+    padding: 30px;
+    padding-top: 5px;
+    background-color: black;
+    border-radius: 20px;
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    transition-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    text-align: center;
+}
+
+.main-signout-button
+{
+    font-size: large;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+}
