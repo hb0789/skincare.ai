@@ -25,16 +25,6 @@
 }
 
 
-.profile-photo-div
-{
-    height: 50px;
-    
-    margin-right: 100px;
-    width: 50px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-}
 
 .user-info
 {
@@ -45,7 +35,7 @@
 
 .dropdown-menu
 {
-    height: 200px;
+    height: auto;
     width: auto;
     padding: 30px;
     padding-top: 5px;
@@ -71,17 +61,46 @@
 }
 
 
-.profile-left
+.profile-photo-div
 {
-    width: 30vw;
-    height: 100%;
-    padding-top: 20vh;
-    padding-left: 20vh;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    height: 50px;
+    margin-right: 100px;
+    width: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 }
 
-.profile-photo-main
+.credits-info
 {
-    border-radius: 50%;
-    height: 30vh;
-    image-rendering: auto;
+    width: auto;
+    background-color: #272626;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: large;
+}
+
+.user-name
+{
+    font-size: 30px;
+    color: white;
+}
+
+.menu-item
+{
+    margin: 5px;
+}
+.menu-item:hover
+{
+    background-color: rgb(54, 53, 53);
+    border-radius: 10px;
+}
+
+.user-email
+{
+    color: #a0a0a0;
+    font-size: auto;
 }

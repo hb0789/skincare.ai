@@ -1,0 +1,27 @@
+.profile-left {
+    width: 30vw;
+    height: 100%;
+    padding-top: 20vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo-main {
+    border-radius: 50%;
+    height: 30vh;
+    width: 30vh; /* Set width to maintain aspect ratio */
+    object-fit: cover; /* This ensures the image covers the div without stretching */
+}
+.profile-name-div
+{
+    padding-top: 30px;
+    font-size: 6vh;
+}
+
+.profile-email-div
+{
+    font-size: 3vh;
+}
