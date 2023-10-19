@@ -1,5 +1,5 @@
-#This is the webapp repository for Skincare.AI
-#Skincare.AI is a revolutionary project, aiming towards simplifying and accelerating the diagnosis of skin diseases and dermatological conditions. 
+#  This is the webapp repository for Skincare.AI
+# Skincare.AI is a revolutionary project, aiming towards simplifying and accelerating the diagnosis of skin diseases and dermatological conditions. 
 
 ## Getting Started
 
