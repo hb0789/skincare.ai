@@ -1,27 +1,58 @@
 .profile-left {
-    width: 30vw;
+    width: 100%;
     height: 100%;
-    padding-top: 20vh;
-    color: white;
+    padding: 25px; 
+    color: rgb(160, 115, 115);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile-photo-main {
-    border-radius: 50%;
-    height: 30vh;
-    width: 30vh; /* Set width to maintain aspect ratio */
-    object-fit: cover; /* This ensures the image covers the div without stretching */
-}
-.profile-name-div
-{
-    padding-top: 30px;
-    font-size: 6vh;
+
+@media (max-width: 768px) {
+    .profile-left {
+        padding-top: 25vh; 
+    }
+
+    .profile-photo-main {
+        height: 20vh; 
+        width: 20vh; 
+    }
+
+    .profile-name-div {
+        font-size: 4vh; 
+    }
+
+    .profile-email-div {
+        font-size: 2.5vh;
+    }
 }
 
-.profile-email-div
-{
-    font-size: 3vh;
+
+@media (min-width: 769px) {
+    .profile-left{
+        padding-top: 15vw ;
+    }
+    .profile-photo-main {
+        height: 30vh;
+        width: 30vh; 
+    }
+
+    .profile-name-div {
+        font-size: 6vh; 
+    }
+
+    .profile-email-div {
+        font-size: 3vh;
+    }
 }
+
+.prof {
+    
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+    color: black;
+}
+
