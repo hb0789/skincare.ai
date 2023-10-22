@@ -6,7 +6,7 @@ import SigninButton from './SigninButton';
 
 export default function Navbar() {
   return (
-    <div className='navbar-main'>
+    <div className=' navbar-main'>
         Skincare.ai
         <CircleStackIcon/>
         <SigninButton/>

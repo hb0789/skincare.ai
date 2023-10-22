@@ -1,5 +1,6 @@
 "use client";
-import "./styles/Signin.css";
+import "../styles/Signin.css";
+
 
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
@@ -39,7 +40,7 @@ const SigninButton = () => {
     if(session && session.user)
     {
         return(
-            <div className='flex gap-4 ml-auto text-2xl items-center'>
+            <div className=' fnav flex gap-4 ml-auto text-2xl items-center'>
                   {status === "authenticated" && session?.user && items.length > 0 ? (
                     <div className="credits-info">
                       <p>{items[0].credits} <FontAwesomeIcon icon={faCoins} /> </p>

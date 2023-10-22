@@ -41,7 +41,9 @@ const Page = () => {
     }, [session]);
   
     return (
-      <div className='app-background'>
+     
+        
+      <div className='prof app-background'>
         <Navbar />
         <div className='profile-left'>
           {profilePhoto && <img className='profile-photo-main' src={profilePhoto}/>}
@@ -53,6 +55,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      
     )
   }
   
