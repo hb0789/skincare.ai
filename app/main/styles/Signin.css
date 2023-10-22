@@ -23,15 +23,15 @@
 /* mobile */
 @media (max-width: 768px) {
   .button-34 {
-    padding: 10px 20px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px 20px; 
+    font-size: 14px; 
   }
 }
 
 /* desktop */
 @media (min-width: 1200px) {
   .button-34 {
-    padding: 16px 30px; /* Adjust padding for larger screens */
-    font-size: 18px; /* Adjust font size for larger screens */
+    padding: 16px 30px; 
+    font-size: 18px; 
   }
 }

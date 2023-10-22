@@ -1,4 +1,5 @@
 "use client";
+import "./styles/Signin.css";
 
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
@@ -78,7 +79,7 @@ const SigninButton = () => {
     }
   return (
     <button className='ml-auto' onClick={() => signIn()}>
-      <div className='main-signin-button'>
+      <div className='button-34 main-signin-button'>
         Sign In
       </div>
     </button>

@@ -1927,6 +1927,11 @@ for-each@^0.3.3:
   dependencies:
     is-callable "^1.1.3"
 
+fortawesome@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.npmjs.org/fortawesome/-/fortawesome-0.0.1-security.tgz"
+  integrity sha512-o/pwn9ZSnveFLYP0d5IejSwz0rpGMDQsBaYVvR8WXSvnxILIwh7IUJK0P90QMF4cnIyouVF2BGrz0LEVSyzimA==
+
 fraction.js@^4.3.6:
   version "4.3.6"
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.6.tgz"
