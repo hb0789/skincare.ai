@@ -1,5 +1,5 @@
 "use client";
-import "./styles/Signin.css";
+import "../styles/Signin.css";
 
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
