@@ -1,22 +1,27 @@
-.app-background
-{
+.app-background {
     background-color: #141616;
     height: 100vh;
 }
 
 
-.main-signin-button
+/* .main-signout-button
 {
+    font-size: large;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: red;
+} */
+/* .main-signin-button {
     background-color: white;
     margin-right: 100px;
     font-size: large;
     padding: 10px;
     border-radius: 5px;
-    background-color: blue;
-}
+    background-color: rgb(155, 155, 164);
+} */
 
-.profile-photo
-{
+.profile-photo {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -25,10 +30,9 @@
 }
 
 
-.profile-photo-div
-{
+.profile-photo-div {
     height: 50px;
-    
+
     margin-right: 100px;
     width: 50px;
     border-radius: 50%;
@@ -36,15 +40,13 @@
     justify-content: center;
 }
 
-.user-info
-{
+.user-info {
     align-items: center;
     color: white;
     text-align: center;
 }
 
-.dropdown-menu
-{
+.dropdown-menu {
     height: 200px;
     width: auto;
     padding: 30px;
@@ -61,26 +63,16 @@
     text-align: center;
 }
 
-.main-signout-button
-{
-    font-size: large;
-    height: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: red;
-}
 
 
-.profile-left
-{
+.profile-left {
     width: 30vw;
     height: 100%;
     padding-top: 20vh;
     padding-left: 20vh;
 }
 
-.profile-photo-main
-{
+.profile-photo-main {
     border-radius: 50%;
     height: 30vh;
     image-rendering: auto;
