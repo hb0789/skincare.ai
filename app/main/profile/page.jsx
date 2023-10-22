@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react'
 import Navbar from '../main-components/Navbar'
 import "../styles/Main.css";
 import "../styles/Navbar.css";
+import "./styles/profile.css"
 import { useSession} from 'next-auth/react';
 import {
     collection,
@@ -43,7 +44,13 @@ const Page = () => {
       <div className='app-background'>
         <Navbar />
         <div className='profile-left'>
-          {profilePhoto && <img className='profile-photo-main' src={profilePhoto} alt="Profile Photo" />}
+          {profilePhoto && <img className='profile-photo-main' src={profilePhoto}/>}
+          <div className='profile-name-div'>
+            {session?.user?.name}
+          </div>
+          <div className='profile-email-div'>
+            {session?.user?.email}
+          </div>
         </div>
       </div>
     )
