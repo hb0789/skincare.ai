@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCTtZ1YuHKxKcofYQaY2zAu7apUrqaDVvc",
-  authDomain: "sih-neuralnexus.firebaseapp.com",
-  projectId: "sih-neuralnexus",
-  storageBucket: "sih-neuralnexus.appspot.com",
-  messagingSenderId: "237649048312",
-  appId: "1:237649048312:web:e229bbc46d2dc9ebaa010d"
+  apiKey: "AIzaSyCKZh-AmOWm4fbERn8jf1eB2Xiv67i8BrU",
+  authDomain: "neuralnexus-1f738.firebaseapp.com",
+  projectId: "neuralnexus-1f738",
+  storageBucket: "neuralnexus-1f738.appspot.com",
+  messagingSenderId: "854117692416",
+  appId: "1:854117692416:web:f28d74789b88b6065d54e5"
 };
 
 // Initialize Firebase
