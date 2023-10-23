@@ -40,7 +40,6 @@
 @media (max-width: 450px ){
 .credits-info{
   display: none;
-  
 }}
 .fnav{
   justify-content: flex-end ;
@@ -50,4 +49,15 @@
 .dropdown-menu{
   background-color: #493654!important;
   color:rgb(111, 243, 183);
+  height: auto;
 }
+
+
+.user-tokens
+{
+  display: none;
+}
+@media (max-width: 450px ){
+  .user-tokens{
+    display: contents;
+  }}

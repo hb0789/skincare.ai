@@ -59,6 +59,18 @@ const SigninButton = () => {
                       <div className='user-email'>
                         {session.user.email}
                       </div>
+                      <div className='user-tokens'>
+                      {status === "authenticated" && session?.user && items.length > 0 ? (
+                    <div className="user-tokens">
+                        <p>{items[0].credits} <FontAwesomeIcon icon={faCoins} /> </p>
+                        {/* Add more fields from itemsArr as needed */}
+                      </div>
+                    ) :
+                    <div className="credits-info">
+                    <p> 0 <FontAwesomeIcon icon={faCoins} /> </p>
+                    {/* Add more fields from itemsArr as needed */}
+                  </div>}
+                      </div>
                       <hr/>
                       <div className='menu-item'>
                       <FontAwesomeIcon icon={faGear} /> Settings 
