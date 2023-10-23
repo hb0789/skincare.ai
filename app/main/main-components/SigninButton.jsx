@@ -66,7 +66,7 @@ const SigninButton = () => {
                         {/* Add more fields from itemsArr as needed */}
                       </div>
                     ) :
-                    <div className="credits-info">
+                    <div className="user-tokens">
                     <p> 0 <FontAwesomeIcon icon={faCoins} /> </p>
                     {/* Add more fields from itemsArr as needed */}
                   </div>}
