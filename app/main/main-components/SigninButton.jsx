@@ -78,6 +78,9 @@ const SigninButton = () => {
                       <button className='menu-item' onClick={e => router.push('/main/profile')}>
                       <FontAwesomeIcon icon={faPerson} /> Profile 
                       </button>
+                      <button className='menu-item' onClick={e => router.push('/main/token')}>
+                      <FontAwesomeIcon icon={faCoins} /> Purchase Tokens
+                      </button>
                       <div>
                       <button onClick={() => signOut()}>
                         <div className='main-signout-button'>
