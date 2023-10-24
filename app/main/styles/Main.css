@@ -1,5 +1,5 @@
 .app-background {
-    background-color: #141616;
+    background-color: #e6f7f7;
     height: 100vh;
 }
 
@@ -42,7 +42,7 @@
 
 .user-info {
     align-items: center;
-    color: white;
+    color: black;
     text-align: center;
     margin-top: 10vh;
 }
@@ -77,4 +77,60 @@
     border-radius: 50%;
     height: 30vh;
     image-rendering: auto;
+}
+
+.uploader
+{
+    height: fit-content;
+    width: fit-content;
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.uploader-main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploader-button
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.uploader-submit
+{
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(2, 39, 252, 0.747);
+}
+
+.uploader-placeholder
+{
+    height: 200px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px dashed #000000;
+}
+
+.spacing
+{
+    padding-top: 10vh;
 }

@@ -1,17 +1,15 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 import "./styles/Navbar.css";
 import "./styles/Main.css";
-import Navbar from './main-components/Navbar';
-import Body from './main-components/Body';
-import { useSession } from 'next-auth/react';
-import {
-  collection,
-  query,
-  onSnapshot,
-  where,
-} from "firebase/firestore";
+import Navbar from "./main-components/Navbar";
+import { useSession } from "next-auth/react";
+import { collection, query, onSnapshot, where } from "firebase/firestore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'  
+import Uploader from "./main-components/Uploader"
+
 import { db } from "../HOCS/firebase";
+import {faDeleteLeft} from '@fortawesome/free-solid-svg-icons'
 
 export default function Page() {
   const { data: session, status } = useSession();
@@ -19,7 +17,10 @@ export default function Page() {
 
   useEffect(() => {
     if (status === "authenticated" && session?.user?.email) {
-      const q = query(collection(db, "item"), where("email", "==", session.user.email));
+      const q = query(
+        collection(db, "item"),
+        where("email", "==", session.user.email)
+      );
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
         let itemsArr = [];
         querySnapshot.forEach((doc) => {
@@ -30,20 +31,12 @@ export default function Page() {
       });
     }
   }, [status, session]);
-
+  const [image, setImage] = useState(null)
+  const [fileName, setFileName] = useState("No files selected")
   return (
-    <div className='app-background'>
+    <div className="app-background">
       <Navbar />
-      <Body />
-      {status === "authenticated" && session?.user && items.length > 0 ? (
-        <div className="user-info">
-          <h2>User Information</h2>
-          <p>Name: {items[0].name}</p>
-          <p>Email: {items[0].email}</p>
-          <p>Age: {items[0].age}</p>
-          {/* Add more fields from itemsArr as needed */}
-        </div>
-      ) : null}
+      <Uploader/>
     </div>
   );
 }

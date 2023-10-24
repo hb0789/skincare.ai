@@ -53,6 +53,15 @@ const Page = () => {
           <div className='profile-email-div'>
             {session?.user?.email}
           </div>
+          {status === "authenticated" && session?.user && items.length > 0 ? (
+        <div className="user-info">
+          <h2>User Information</h2>
+          <p>Name: {items[0].name}</p>
+          <p>Email: {items[0].email}</p>
+          <p>Age: {items[0].age}</p>
+          {/* Add more fields from itemsArr as needed */}
+        </div>
+      ) : null}
         </div>
       </div>
       
