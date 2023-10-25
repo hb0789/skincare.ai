@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const stripe = require("stripe")("sk_test_51O4LbwSBSFAm6KJ3axIzTz3q3nExN9mzygMVkg4AkgFuAZBR78UjOrHKCtuynyDthIjl1r7fnKS8zbXiC5aOxqVj00bdYMXn50");
+const stripe = require("stripe")("sk_test_51O59SISG7DinUUfb1L55H1F4EBePEtlormgL8HGaSS55NNkZ31DKcJo0hKTCirkccUv0KVhw2wHAWG5h9BhP6UKN00GmDJpunP");
 
 app.use(express.json());
 app.use(cors());
@@ -10,7 +10,7 @@ app.use(cors());
 // checkout api
 app.post("/api/create-checkout-session",async(req,res)=>{
     const {products} = req.body;
-    console.log(products)
+    
 
     const lineItems = products.map((product)=>({
         price_data:{
@@ -28,8 +28,8 @@ app.post("/api/create-checkout-session",async(req,res)=>{
         payment_method_types:["card"],
         line_items:lineItems,
         mode:"payment",
-        success_url:"http://localhost:3000/sucess",
-        cancel_url:"http://localhost:3000/cancel",
+        success_url:"http://localhost:3000/main/sucess",
+        cancel_url:"http://localhost:3000/main/cancel",
     });
 
     res.json({id:session.id})

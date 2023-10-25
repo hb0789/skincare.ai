@@ -28,8 +28,8 @@ const CartDetails = () => {
 
     // payment integration
     const makePayment = async () => {
-        const stripe = await loadStripe("pk_test_51O4LbwSBSFAm6KJ38hlzPSvpDqUjMfKxaBmku3Z2wBRNm51F4uqSHNu5m8XBMdZC5WaUxsEjq7eeIKYspmsowgkQ00fTolQx1X");
-
+        const stripe = await loadStripe("pk_test_51O59SISG7DinUUfbH5x5c5lYaqWXHTdzwPTKnqoEfVKEDT6smQIEq6ONIy3VtruNm9E8n2zCgKMbSpuk5nVx6CcE00OVgbaOY7");
+        
         const body = {
             products: Cardsdata 
         }
