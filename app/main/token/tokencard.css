@@ -9,6 +9,10 @@
     transition-duration: 0.2s;
 }
 
+.token-background{
+    background-color: #0a0a0a;
+}
+
 .token-main
 {
     display: flex;
@@ -23,17 +27,56 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #050505;
     font-family: 'Open Sans', sans-serif;
   }
   
-  .card {
-    width: 250px;
-    height: 450px;
+.card {
+    width: 350px;
+    height: 600px;
     margin: 10vh;
     margin-top: 20vh;
-    border-radius: 50px;
-    background: #ffffff;
-    box-shadow: 20px 20px 60px #bebebe,
-                  -20px -20px 60px #ffffff;
-   }
+    border-radius: 30px;
+    background: #000000;
+    box-shadow: 4px 4px 10px #6b6b96,
+                    -4px -4px 10px #9185be;
+    transition-duration: 0.2s;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.card:hover{
+    transition-duration: 0.2s;
+    box-shadow: 20px 20px 60px #6b6b96,
+    -20px -20px 60px #9185be;
+}
+
+.token-heading
+{
+    font-size: 30px;
+}
+
+.token-button
+{
+    color: white;
+    height: auto;
+    width: 200px;
+    padding: 10px;
+    background-color: rgb(7, 7, 7);
+    border: 1px solid;
+    transition-duration: 0.2s;
+    border-radius: 5px;
+}
+
+.token-button:hover
+{
+    color: black;
+    height: auto;
+    width: 200px;
+    padding: 10px;
+    background-color: aliceblue;
+    
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
