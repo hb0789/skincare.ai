@@ -1,0 +1,39 @@
+.token-card
+{
+    height: 60vh;
+    width: 30vh;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10vh;
+    transition-duration: 0.2s;
+}
+
+.token-main
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.space-div
+{
+    height: 10vh;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .card {
+    width: 250px;
+    height: 450px;
+    margin: 10vh;
+    margin-top: 20vh;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #bebebe,
+                  -20px -20px 60px #ffffff;
+   }

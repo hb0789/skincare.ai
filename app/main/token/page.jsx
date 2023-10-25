@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from 'react'
 
 import { loadStripe } from '@stripe/stripe-js';
+import Navbar from '../main-components/Navbar';
+import TokenCard from './TokenCard'
+import './tokencard.css';
 
 
 const CartDetails = () => {
@@ -53,27 +56,17 @@ const CartDetails = () => {
 
     return (
         <>
-            <div className='row justify-content-center m-0'>
-                <div className='col-md-8 mt-5 mb-5 cardsdetails'>
-                    <div className="card">
+            <Navbar/>
+            <div classNameName='spacing-div'></div>
+            <div className='token-main'>
                         
-                        <div className="card-body p-0">
-                            {
-                                    
-                                    <table className='table cart-table mb-0 table-responsive-sm'>
-                                        
-                                       
-                                        <tfoot>
-                                            <tr>
-                                               <th className='text-right'><button className='btn btn-success' onClick={makePayment} type='button'>Checkout</button></th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                            }
-                        </div>
-                    </div>
-                </div>
+            <div class="card"> 2 tokens</div>    
+            <div class="card"> 5 tokens</div>    
+            <div class="card"> 10 tokens</div>    
+            <div class="card"> 20 tokens</div>    
             </div>
+
+            
         </>
     )
 }
