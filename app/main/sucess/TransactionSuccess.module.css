@@ -1,0 +1,56 @@
+
+
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.containerContent {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: bounce 1s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.verifiedIcon {
+  font-size: 4rem;
+  color: #33cc33;
+  animation: zoomInOut 2s ease-in-out infinite; 
+}
+
+.title {
+  font-size: 24px;
+}
+
+.message {
+  font-size: 18px;
+  color: #777;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5); 
+  }
+}
