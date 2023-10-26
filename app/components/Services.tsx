@@ -21,7 +21,7 @@ export default function Services() {
         SERVICES <br />
       </div>
       <div className={"service-description"}>
-        Taking skincare to the <br /> next level
+        Introducing the next generation <br /> of skin care
       </div>
       <br />
       <div className="service-box-main">

@@ -1,10 +1,10 @@
 .navbar-main
 {
     height: 8vh;
-    background-color: #796bf8;
-    border-bottom: 1px solid;
+    background-color: #6063ff;
+    border-bottom: 1px solid #f3eaea;
     width: 100%;
-    color: #ffffff;
+    color: #f3eaeae0;
     font-size: 5vh;
     padding-left: 4vw;
     border-color: white;

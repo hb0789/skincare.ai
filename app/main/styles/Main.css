@@ -1,25 +1,12 @@
 .app-background {
-    background-color: #e6f7f7;
+    background-color: #fafafa;
     height: 100vh;
 }
+.home-button-main{
+    transition-duration: 0.2s;
+    color: #ffffff;
+}
 
-
-/* .main-signout-button
-{
-    font-size: large;
-    height: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: red;
-} */
-/* .main-signin-button {
-    background-color: white;
-    margin-right: 100px;
-    font-size: large;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(155, 155, 164);
-} */
 
 .profile-photo {
     height: 50px;
@@ -122,12 +109,19 @@
 {
     height: 200px;
     width: 400px;
+    color: #858585;
     justify-content: center;
     align-items: center;
     display: flex;
     border-radius: 10px;
     background-color: transparent;
-    border: 2px dashed #000000;
+    border: 2px dashed #858585;
+}
+
+.uploader-details
+{
+    color: #858585;
+    text-align: center;
 }
 
 .spacing

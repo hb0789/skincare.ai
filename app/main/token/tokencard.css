@@ -1,36 +1,19 @@
-.token-card
-{
-    height: 60vh;
-    width: 30vh;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 10vh;
-    transition-duration: 0.2s;
-}
-
-.token-background{
-    background-color: #0a0a0a;
-}
-
-.token-main
-{
+.token-main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.space-div
-{
+.space-div {
     height: 10vh;
 }
 
 body {
     background-color: #050505;
     font-family: 'Open Sans', sans-serif;
-  }
-  
+}
+
 .card {
     width: 350px;
     height: 600px;
@@ -39,26 +22,25 @@ body {
     border-radius: 30px;
     background: #000000;
     box-shadow: 4px 4px 10px #6b6b96,
-                    -4px -4px 10px #9185be;
+        -4px -4px 10px #9185be;
     transition-duration: 0.2s;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
 }
-.card:hover{
+.card:hover {
     transition-duration: 0.2s;
-    box-shadow: 20px 20px 60px #6b6b96,
-    -20px -20px 60px #9185be;
+    box-shadow: 20px 20px 60px #6b6b96, -20px -20px 60px #9185be;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
-.token-heading
-{
+.token-heading {
     font-size: 30px;
 }
 
-.token-button
-{
+.token-button {
     color: white;
     height: auto;
     width: 200px;
@@ -69,14 +51,12 @@ body {
     border-radius: 5px;
 }
 
-.token-button:hover
-{
+.token-button:hover {
     color: black;
     height: auto;
     width: 200px;
     padding: 10px;
     background-color: aliceblue;
-    
     border-radius: 5px;
     transition-duration: 0.2s;
 }

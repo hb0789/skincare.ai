@@ -1,0 +1,51 @@
+.experts-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.experts-right {
+  height: 80vh;
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  overflow: hidden;
+}
+
+.experts-left {
+  height: auto;
+  position: relative;
+  background-color: white;
+  width: 49vw;
+}
+
+.experts-background {
+    object-fit: cover;
+  height: 100vh;
+  z-index: 0;
+}
+.expert-description {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.expert-text {
+text-align: center;
+  margin: auto;
+  font-size: 1vw;
+  margin-top: 20px;
+  margin-inline: 5vw;
+  font-weight: 300;
+}
+
+.expert-title {
+    padding-top: 80px;
+    font-size: 1vw;
+    color: #0344cf;
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+    text-align: center;
+  }

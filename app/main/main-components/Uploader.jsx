@@ -72,7 +72,7 @@ export default function Uploader() {
                 {loading ? (
                   <div className="loader"></div>
                 ) : (
-                  <>
+                  <div className="uploader-details">
                     {fileName}{" "}
                     <FontAwesomeIcon
                       onClick={() => {
@@ -85,7 +85,7 @@ export default function Uploader() {
                     <button className="uploader-submit" onClick={getDisease}>
                       Submit
                     </button>
-                  </>
+                  </div>
                 )}
                 {diseaseData && (
                   <div className="disease-data">
