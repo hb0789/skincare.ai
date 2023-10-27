@@ -5,6 +5,7 @@ import Numbers from './components/Numbers'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Experts from './components/Experts'
+import Mission from './components/Mission'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Numbers/>
       
       <Experts/> 
+      <Mission/>
       <Footer />
     </>
   )
