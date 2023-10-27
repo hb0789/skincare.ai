@@ -35,7 +35,7 @@ export default function Main() {
           <div className="footer-title">
             CONTACT <br />
           </div>
-          <div className="footer-description">Let's Work Together</div>
+          <div className="footer-description">Let&apos;s Work Together</div>
           <div className="footer-text">
             Team Neural Nexus <br />
             neuralnexus10@gmail.com <br />
