@@ -1,46 +1,75 @@
-import React from 'react';
+import React from "react";
+import { Inter } from "next/font/google";
+import { Parallax, Background } from "react-parallax";
+import BackgroundPhoto from "../media/footer.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faTwitter,
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import "../Style/MainStyle.css";
 import "../Style/Footer.css";
-const Footer: React.FC = () => {
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import ContactForm from '../utils/ContactForm'
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+export default function Main() {
+  const router = useRouter();
+  const imageUrl = BackgroundPhoto.src;
   return (
-    <footer className="footer" id="foot">
-      <div className="container">
-        <div className="footer-content">
-         
-          <div className="footer-section">
-            <h4>Contact Us</h4>
-            <p>Email: neuralnexus@gmail.com</p>
-            <p>Phone: +91 00000000</p>
+    <Parallax
+      className="footer-background"
+      bgImage={imageUrl}
+      bgClassName="footer-background"
+      strength={600}
+    >
+      <div className="footer-main">
+        <div className="footer-left">
+          <div className="footer-title">
+            CONTACT <br />
           </div>
-          <div className="footer-section">
-            <h4>Follow Us</h4>
-            <ul className="social-media">
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook">
-                    <img src="./facebook.svg" alt="facebook" />
-                  </i>
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter"><img src="./twitter.svg" alt="twitter" /></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"><img src="./insta.svg" alt="instagram" /></i>
-                </a>
-              </li>
-            </ul>
+          <div className="footer-description">Let's Work Together</div>
+          <div className="footer-text">
+            Team Neural Nexus <br />
+            neuralnexus10@gmail.com <br />
+            +91 98765 43210 <br />
+            <div className="footer-brands">
+              <div className="footer-brand-item">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </div>
+              <div className="footer-brand-item">
+                <FontAwesomeIcon icon={faTwitter} />
+              </div>
+              <div className="footer-brand-item">
+                <FontAwesomeIcon icon={faFacebook} />
+              </div>
+              <div className="footer-brand-item">
+                <FontAwesomeIcon icon={faInstagram} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="copyright">
-          <p>&copy; {new Date().getFullYear()} Neural Nexus. All rights reserved.</p>
+        <div className="footer-left">
+          <div className="footer-title">
+            THE TEAM <br />
+          </div>
+          <div className="footer-text">
+            Hardik Bhatia <br />
+            Arshlaan Siddiquie <br />
+            Mridul Jain <br />
+            Somil Agarwal <br />
+            Sahil Murhekar <br />
+            Sweta Soundarya Das <br />
+          </div>
         </div>
       </div>
-      
-    </footer>
+    </Parallax>
   );
-};
-
-export default Footer;
+}

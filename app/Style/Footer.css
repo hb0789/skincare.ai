@@ -1,73 +1,68 @@
-/* Footer.module.css */
+.footer-background {
+  height: 50vh;
+  object-fit: contain;
+}
 
-/* Default styles for larger screens */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-  }
+.footer-description {
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  margin-inline: 10vw;
+  font-size: 2vw;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.footer-text {
+  margin: auto;
+  font-size: 1vw;
+  margin-top: 20px;
+  margin-inline: 10vw;
+  font-weight: 300;
+}
+
+.footer-title {
   
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .footer-section {
-    flex: 1;text-align: center;
-    max-width: 300px;
-  }
-  
-  .footer-section h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .social-media {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .social-media li {
-    font-size: 24px;
-  }
-  
-  .social-media a {
-    color: #fff;
-  }
-  
-  .copyright {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .copyright p {
-    font-size: 14px;
-  }
-  
-  /* Responsive styles for smaller screens */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-section {
-      flex: none;
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  }
-  
+  margin-inline: 10vw;
+  padding-top: 80px;
+  font-size: 1vw;
+  color: #0344cf;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+}
+.footer-right {
+  height: 80vh;
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  overflow: hidden;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer-left {
+  height: auto;
+  position: relative;
+  background-color: white;
+  width: 50vw;
+  background-color: transparent;
+}
+
+.footer-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.footer-brands
+{
+  font-size: 2vw;
+  display: flex;
+}
+
+.footer-brand-item
+{
+  margin: 1vw;
+}
