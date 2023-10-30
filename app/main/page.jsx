@@ -5,10 +5,10 @@ import "./styles/Main.css";
 import Navbar from "./main-components/Navbar";
 import { useSession } from "next-auth/react";
 import { collection, query, onSnapshot, where } from "firebase/firestore";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'  
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Uploader from "./main-components/Uploader"
-import { db } from "../HOCS/firebase";
-import {faDeleteLeft} from '@fortawesome/free-solid-svg-icons'
+import { db } from "../HOCS/firebase.mjs";
+import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Page() {
   const { data: session, status } = useSession();
@@ -35,7 +35,7 @@ export default function Page() {
   return (
     <div className="app-background">
       <Navbar />
-      <Uploader/>
+      <Uploader />
     </div>
   );
 }

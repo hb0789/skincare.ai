@@ -44,6 +44,7 @@ const CartDetails = () => {
 
     const body = {
       products: [{ dish: `Token ${tokens}`, price: tokens * 20, qnty: 1 }],
+      userId: 'Yv2IquFYHEBvI8TI8u1n',
     };
     const headers = {
       "Content-Type": "application/json",

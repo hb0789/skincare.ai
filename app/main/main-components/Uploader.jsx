@@ -60,9 +60,9 @@ export default function Uploader() {
           />
 
           {file ? (
-            <img src={image} height="200px" width="200px" alt="Uploaded" />
+            <image src={image} height="200px" width="200px" alt="Uploaded" />
           ) : (
-            <div className="uploader-placeholder">Upload here!</div>
+            <div className="uploader-placeholder">Add/Drag your skin image here!</div>
           )}
         </form>
         <section>
