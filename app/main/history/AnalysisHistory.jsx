@@ -42,34 +42,35 @@ export default function AnalysisHistory() {
   };
 
 
+ 
   return (
-    <main className="flex flex-col items-center justify-between">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm ">
-      <h1 className="text-4xl p-4 text-center"> Your Session History<br/> </h1>
-        <div className="p-4 rounded-lg">
-          <ul className="flex flex-col items-center">
-            {items.map((item, id) => (
-              <li
-                key={id}
-                className="my-4 w-full flex justify-between bg-slate-950 text-white"
-                style={{ width: "100%" }} // Set li width to 100% to center content
+    <main className="flex flex-col items-center min-h-screen">
+      <div className="w-full max-w-2xl bg-white rounded-lg shadow-md p-8">
+        <h1 className="text-4xl mb-6 text-center font-semibold">Your Report History</h1>
+        <ul className="w-full">
+          <li className="flex justify-between items-center bg-gray-200 p-4 mb-2 rounded-md">
+            <span className="w-1/4 font-semibold">Session ID</span>
+            <span className="w-1/4 font-semibold">Time</span>
+            <span className="w-1/4 font-semibold">Doctor</span>
+            <span className="w-1/4 text-center font-semibold">Actions</span>
+          </li>
+          {items.map((item, id) => (
+            <li
+              key={id}
+              className="flex justify-between items-center bg-gray-100 p-4 mb-2 rounded-md"
+            >
+              <span className="w-1/4">{item.sid}</span>
+              <span className="w-1/4">{formatTimestamp(item.time)}</span>
+              <span className="w-1/4">{item.doctor}</span>
+              <button
+                onClick={() => deleteItem(item.id)}
+                className="w-1/4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-center"
               >
-                <div className="p-4 w-full flex justify-between">
-                  <span>{item.sid}</span>
-                  <span>{formatTimestamp(item.time)}</span>
-                  <span>{item.doctor}</span>
-                </div>
-
-                <button
-                  onClick={() => deleteItem(item.id)}
-                  className="p-4 border-l-2 border-slate-900 hover:bg-slate-900 w-16"
-                >
-                  VIEW
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+                VIEW
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     </main>
   );

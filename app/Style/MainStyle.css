@@ -3,7 +3,11 @@
     height: 100vh;
   }
 
-
+  ::selection {
+    background: transparent;
+    color: blue;
+    border: 2px solid #007bff; /* Change the border color as desired */
+  }
   .black-bar{
     background-color: black;
     height: 1px;

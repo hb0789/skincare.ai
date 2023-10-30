@@ -79,7 +79,7 @@ const SigninButton = () => {
                       <FontAwesomeIcon icon={faPerson} /> Profile 
                       </button>
                       <button className='menu-item' onClick={e => router.push('/main/history')}>
-                      <FontAwesomeIcon icon={faHistory} /> Session History
+                      <FontAwesomeIcon icon={faHistory} /> Report History
                       </button>
                       <button className='menu-item' onClick={e => router.push('/main/token')}>
                       <FontAwesomeIcon icon={faCoins} /> Purchase Tokens
