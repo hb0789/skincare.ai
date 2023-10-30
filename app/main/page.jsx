@@ -7,7 +7,6 @@ import { useSession } from "next-auth/react";
 import { collection, query, onSnapshot, where } from "firebase/firestore";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'  
 import Uploader from "./main-components/Uploader"
-
 import { db } from "../HOCS/firebase";
 import {faDeleteLeft} from '@fortawesome/free-solid-svg-icons'
 

@@ -6,7 +6,7 @@ import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
 import NavItem from './NavItem.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'  
-import {faPerson, faGear, faCoins} from '@fortawesome/free-solid-svg-icons'
+import {faPerson, faGear, faCoins, faHistory} from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from "next/navigation";
 import {
   collection,
@@ -77,6 +77,9 @@ const SigninButton = () => {
                       </div>
                       <button className='menu-item' onClick={e => router.push('/main/profile')}>
                       <FontAwesomeIcon icon={faPerson} /> Profile 
+                      </button>
+                      <button className='menu-item' onClick={e => router.push('/main/history')}>
+                      <FontAwesomeIcon icon={faHistory} /> Session History
                       </button>
                       <button className='menu-item' onClick={e => router.push('/main/token')}>
                       <FontAwesomeIcon icon={faCoins} /> Purchase Tokens
