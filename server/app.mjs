@@ -16,9 +16,9 @@ app.use(cors());
 
 
 
-app.post("/main/success", async (req, res) => {
+app.post('/main/suces', async (req, res) => {
+    console.log("inside")
     const { session_id, userId } = req.body;
-  console.log("inside")
     try {
       const session = await stripe.checkout.sessions.retrieve(session_id);
   
@@ -62,7 +62,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'http://localhost:3000/main/success',
+            success_url: 'http://localhost:3000/main/sucess',
             cancel_url: 'http://localhost:3000/main/cancel',
         });
 

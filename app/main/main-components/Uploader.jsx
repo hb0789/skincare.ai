@@ -40,6 +40,7 @@ export default function Uploader() {
   return (
     <>
       <div className="spacing"></div>
+      <div className="setter">
       <div className="uploader-main">
         <form
           className="uploader"
@@ -60,7 +61,7 @@ export default function Uploader() {
           />
 
           {file ? (
-            <image src={image} height="200px" width="200px" alt="Uploaded" />
+            <img className="im" src={image} height="200px" width="200px" alt="Uploaded" />
           ) : (
             <div className="uploader-placeholder">Add/Drag your skin image here!</div>
           )}
@@ -73,18 +74,18 @@ export default function Uploader() {
                   <div className="loader"></div>
                 ) : (
                   <div className="uploader-details">
-                    {fileName}{" "}
-                    <FontAwesomeIcon
+                    <div className="filename">{fileName}{" "}</div>
+                    <div className="dustbin"><FontAwesomeIcon 
                       onClick={() => {
                         setFile(null);
                         setDiseaseData(null);
                       }}
                       icon={faTrashCan}
-                    />
+                    /></div>
                     <br />
-                    <button className="uploader-submit" onClick={getDisease}>
+                    {/* <button className="btnupload" onClick={getDisease}>
                       Submit
-                    </button>
+                    </button> */}
                   </div>
                 )}
                 {diseaseData && (
@@ -100,6 +101,16 @@ export default function Uploader() {
             )}
           </span>
         </section>
+        <button className="btnupload" onClick={getDisease}>Get Analysis</button>
+      </div>
+        <div className="second">
+          <h1 className="tex">lorem ipmsin</h1>
+          <div>
+            <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis facere in mollitia nesciunt pariatur deleniti. Deleniti, repellat. Qui reprehenderit sequi autem quasi rerum aperiam enim fugiat veritatis, adipisci quo nostrum? Lorem ipsum dolor sit amet consectetur adipisicing elit. In deleniti facere ex quos adipisci, incidunt ab dolorem minus eveniet at enim nam rerum nulla, blanditiis debitis saepe, dolores quasi iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore blanditiis consectetur beatae minima sandae itaque, numquam, eum amet quam!</h1>
+          </div>
+          <button className="btnupload">More Details</button>
+        </div>
+
       </div>
     </>
   );
