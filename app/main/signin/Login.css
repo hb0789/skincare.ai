@@ -1,14 +1,20 @@
+/* Login Page CSS */
 
+/* Base Styles */
 .login-container {
     width: 350px;
-
     margin: 10% auto;
-    padding: 20px;
+    padding: 25px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 30px 70px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .login-container:hover {
+    transform: scale(1.02);
   }
   
   h1 {
@@ -30,6 +36,12 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    transition: border 0.3s;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border: 1px solid #007BFF;
   }
   
   button {
@@ -41,6 +53,7 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 18px;
+    transition: background-color 0.3s;
   }
   
   button:hover {
@@ -52,10 +65,12 @@
     text-align: right;
     font-size: 14px;
     color: #007BFF;
+    transition: color 0.3s;
   }
   
   .forgot-password a {
     text-decoration: none;
+    color: #007BFF;
   }
   
   .or-divider {
@@ -68,6 +83,7 @@
     flex: 1;
     height: 1px;
     background-color: #ccc;
+    transition: background-color 0.3s;
   }
   
   .or-divider p {
@@ -82,13 +98,16 @@
     justify-content: center;
     margin-top: 20px;
     color: #666;
+    transition: color 0.3s;
   }
   
   .google-signin p {
     margin-right: 10px;
     font-size: 16px;
+    transition: color 0.3s;
   }
   
+  /* Media Queries for Responsiveness */
   
   @media (max-width: 768px) {
     .login-container {
