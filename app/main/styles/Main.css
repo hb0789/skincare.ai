@@ -128,13 +128,13 @@
     width: auto;
     padding: 5%;
     padding-bottom: 0%;
-    color: #858585 !important;
+    color: #73797e !important;
     justify-content: space-around;
     align-items: center;
     display: block;
     border-radius: 0;
     background-color: transparent;
-    background-color: rgb(244, 236, 236);
+    background-color: transparent;
 }
 .dustbin{
     justify-content: end;
