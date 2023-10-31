@@ -24,6 +24,11 @@
     font-weight:700;
     
   }
+  .tex{
+    color:red;
+    font-size: 20px;
+    margin-top: 15px !important;
+  }
   
   form {
     display: flex;
