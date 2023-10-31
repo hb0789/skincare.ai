@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
@@ -10,10 +10,23 @@ export default function Uploader() {
   const [fileName, setFileName] = useState("No files selected");
   const [diseaseData, setDiseaseData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const inputRef = useRef(null); // Create a ref for the input element
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      const newFile = new File([selectedFile], selectedFile.name, {
+        type: selectedFile.type,
+      });
+      setFileName(selectedFile.name);
+      setFile(newFile);
+      setImage(URL.createObjectURL(selectedFile));
+      event.target.value = null;
+    }
+  };
 
   const getDisease = async () => {
-    setLoading(true); // Set loading state to true
-
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", file);
 
@@ -33,10 +46,11 @@ export default function Uploader() {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false); // Set loading state back to false
+      setLoading(false);
+      // Clear the input field using the ref
+      inputRef.current.value = "";
     }
   };
-
   return (
     <>
       <div className="spacing"></div>
@@ -50,17 +64,12 @@ export default function Uploader() {
             accept="image/*"
             className="input-image"
             hidden
-            onChange={({ target: { files } }) => {
-              if (files && files[0]) {
-                setFileName(files[0].name);
-                setFile(files[0]);
-                setImage(URL.createObjectURL(files[0]));
-              }
-            }}
+            onChange={handleFileChange}
+            ref={inputRef} // Assign the ref to the input element
           />
 
           {file ? (
-            <img src={image} height="200px" width="200px" alt="Uploaded" />
+            <img src={image} height="500px" width="500px" alt="Uploaded" />
           ) : (
             <div className="uploader-placeholder">Upload here!</div>
           )}
@@ -78,6 +87,8 @@ export default function Uploader() {
                       onClick={() => {
                         setFile(null);
                         setDiseaseData(null);
+                        setImage(null);
+                        setFileName(null);
                       }}
                       icon={faTrashCan}
                     />

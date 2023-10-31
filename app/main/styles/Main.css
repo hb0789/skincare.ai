@@ -104,6 +104,9 @@
     color: white;
     background-color: rgba(2, 39, 252, 0.747);
 }
+.uploader-submit:hover {
+    background-color: rgba(2, 39, 252, 1);
+  }
 
 .uploader-placeholder
 {
@@ -116,6 +119,22 @@
     border-radius: 10px;
     background-color: transparent;
     border: 2px dashed #858585;
+    
+    transition-duration: 0.2s;
+}
+.uploader-placeholder:hover
+{
+    scale: 110%;
+    height: 200px;
+    width: 400px;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px dashed #070707;
+    transition-duration: 0.2s;
 }
 
 .uploader-details
@@ -129,20 +148,35 @@
     padding-top: 10vh;
 }
 .loader {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #3498db;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #3498db;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     animation: spin 2s linear infinite;
   }
   
   @keyframes spin {
-    0% { transform: rotate(0deg); }
+    0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg); }
   }
 
   ::selection {
     background: transparent;
     border: 1px solid;
+  }
+
+  .page-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .instructions {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .uploader-container {
+    flex: 1;
   }
