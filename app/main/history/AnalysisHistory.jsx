@@ -3,6 +3,7 @@
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, { useState, useEffect } from "react";
 import {
+  Timestamp,
   collection,
   addDoc,
   query,
@@ -34,24 +35,23 @@ export default function AnalysisHistory() {
     await deleteDoc(doc(db, "session", id));
   };
   const formatTimestamp = (timestamp) => {
-    // This converts timestamp to React readable format. Was giving error otherwise.
-    const date = timestamp.toDate();
-    const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-
-    return formattedDate;
+    if (timestamp instanceof Timestamp) {
+      const date = timestamp.toDate();
+      const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+      return formattedDate;
+    }
+    return "N/A";
   };
-
-
  
   return (
     <main className="flex flex-col items-center min-h-screen">
-      <div className="w-full max-w-2xl bg-white rounded-lg shadow-md p-8">
+      <div className="w-full max-w-5xl bg-white rounded-lg shadow-md p-8">
         <h1 className="text-4xl mb-6 text-center font-semibold">Your Report History</h1>
         <ul className="w-full">
           <li className="flex justify-between items-center bg-gray-200 p-4 mb-2 rounded-md">
             <span className="w-1/4 font-semibold">Session ID</span>
             <span className="w-1/4 font-semibold">Time</span>
-            <span className="w-1/4 font-semibold">Doctor</span>
+            <span className="w-1/4 font-semibold">Disease</span>
             <span className="w-1/4 text-center font-semibold">Actions</span>
           </li>
           {items.map((item, id) => (
@@ -60,8 +60,8 @@ export default function AnalysisHistory() {
               className="flex justify-between items-center bg-gray-100 p-4 mb-2 rounded-md"
             >
               <span className="w-1/4">{item.sid}</span>
-              <span className="w-1/4">{formatTimestamp(item.time)}</span>
-              <span className="w-1/4">{item.doctor}</span>
+              <span className="w-1/4">{formatTimestamp(item.timestamp)}</span>
+              <span className="w-1/4">{item.disease}</span>
               <button
                 onClick={() => deleteItem(item.id)}
                 className="w-1/4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-center"
