@@ -56,11 +56,11 @@ export default function Page() {
               of interest.
             </li>
             <li>
-              Wait for the upload to complete. You'll see a preview of your
+              Wait for the upload to complete. You will ll see a preview of your
               uploaded image.
             </li>
             <li>
-              Click the "Submit" button to initiate the disease classification
+              Click the Submit button to initiate the disease classification
               process.
             </li>
             <li>
