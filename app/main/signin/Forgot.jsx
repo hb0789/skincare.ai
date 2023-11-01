@@ -1,14 +1,15 @@
-import '../signin/Register.css'
+import '../signin/Forgot.css'
 import React from 'react';
 
-const Register = () => {
+const Forgot = () => {
   return (
     <div className="login-container">
-      <h1>Register</h1>
+      <h1>Forgot Password</h1>
       <form>
         <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Register</button>
+        <input type="password" placeholder="Enter older password" />
+        <input type="password" placeholder="New Password" />
+        <button>Change</button>
       </form>
       
       <div className="or-divider">
@@ -32,4 +33,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Forgot;
