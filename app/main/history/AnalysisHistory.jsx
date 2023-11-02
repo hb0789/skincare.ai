@@ -1,6 +1,7 @@
 "use client";
 
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
+import ReportModal from './ReportModal'
 import React, { useState, useEffect } from "react";
 import {
   Timestamp,
@@ -9,6 +10,7 @@ import {
   query,
   onSnapshot,
   deleteDoc,
+  getDoc,
   doc,
   where,
 } from "firebase/firestore";
@@ -31,9 +33,43 @@ export default function AnalysisHistory() {
     }
   }, [status, session]);
 
-  const deleteItem = async (id) => {
-    await deleteDoc(doc(db, "session", id));
+  const [selectedReport, setSelectedReport] = useState(null);
+
+  const fetchReportDetails = async (id) => {
+    try {
+      const reportRef = doc(db, "session", id);
+      const reportSnapshot = await getDoc(reportRef);
+      
+      if (reportSnapshot.exists()) {
+        // Extract detailed report data from the snapshot and return it
+        const detailedReport = {
+          id: reportSnapshot.id,
+          ...reportSnapshot.data(),
+        };
+        return detailedReport;
+      } else {
+        console.log("No such document exists!");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching report details: ", error);
+      throw error;
+    }
   };
+
+  const viewItem = async (id) => {
+    // Fetch detailed information based on the 'id' from the database
+    const detailedReport = await fetchReportDetails(id); // Implement this function to fetch data from the database
+
+    // Set the selectedReport state to display the modal
+    setSelectedReport(detailedReport);
+  };
+
+  const closeModal = () => {
+    // Close the modal by resetting the selectedReport state
+    setSelectedReport(null);
+  };
+
   const formatTimestamp = (timestamp) => {
     if (timestamp instanceof Timestamp) {
       const date = timestamp.toDate();
@@ -63,8 +99,8 @@ export default function AnalysisHistory() {
               <span className="w-1/4">{formatTimestamp(item.timestamp)}</span>
               <span className="w-1/4">{item.disease}</span>
               <button
-                onClick={() => deleteItem(item.id)}
-                className="w-1/4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md text-center"
+                onClick={() => viewItem(item.id)}
+                className="w-1/4 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 ml-4 rounded-md text-center"
               >
                 VIEW
               </button>
@@ -72,6 +108,7 @@ export default function AnalysisHistory() {
           ))}
         </ul>
       </div>
+      <ReportModal onClose={closeModal} report={selectedReport} />
     </main>
   );
 }
