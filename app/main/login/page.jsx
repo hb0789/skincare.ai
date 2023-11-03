@@ -1,36 +1,40 @@
-import '../signin/Forgot.css'
+import '../styles/Login.css'
 import React from 'react';
 
-const Forgot = () => {
+const Login = () => {
   return (
     <div className="login-container">
-      <h1>Forgot Password</h1>
+      <h1>Login</h1>
       <form>
         <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Enter older password" />
-        <input type="password" placeholder="New Password" />
-        <button>Change</button>
+        <input type="password" placeholder="Password" />
+        <button>Login</button>
       </form>
-      
+      <p className="forgot-password">
+        <a href="../main/forgot">Forgot Password?</a>
+      </p>
       <div className="or-divider">
         <div className="divider-line"></div>
         <p>Or</p>
         <div className="divider-line"></div>
       </div>
-      <div className='tex'>
-        Sign in using
-      </div>
       <div className="google-signin">
         
         
+        <p>login using</p>
         <div className='logo'>
         <img
           src="https://img.icons8.com/fluent/48/000000/google-logo.png"
           alt="Google Logo"
         /></div>
       </div>
+      
+      <p className="noaccount">
+        Dont have an account? 
+        <a href="../main/signin"> Sign Up</a>
+      </p>
     </div>
   );
 };
 
-export default Forgot;
+export default Login;

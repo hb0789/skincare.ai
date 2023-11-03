@@ -1,22 +1,24 @@
-import '../signin/Login.css'
+import '../styles/Forgot.css'
 import React from 'react';
 
-const Login = () => {
+const Forgot = () => {
   return (
     <div className="login-container">
-      <h1>Login</h1>
+      <h1>Forgot Password</h1>
       <form>
         <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Login</button>
+        <input type="password" placeholder="Enter older password" />
+        <input type="password" placeholder="New Password" />
+        <button>Change</button>
       </form>
-      <p className="forgot-password">
-        <a href="#">Forgot Password?</a>
-      </p>
+      
       <div className="or-divider">
         <div className="divider-line"></div>
         <p>Or</p>
         <div className="divider-line"></div>
+      </div>
+      <div className='tex'>
+        Sign in using
       </div>
       <div className="google-signin">
         
@@ -31,4 +33,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forgot;

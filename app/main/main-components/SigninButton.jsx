@@ -97,7 +97,7 @@ const SigninButton = () => {
         )
     }
   return (
-    <button className='ml-auto' onClick={() => signIn()}>
+    <button className='ml-auto' onClick={e => router.push('/main/signin')}>
       <div className='button-34 main-signin-button'>
         Sign In
       </div>
