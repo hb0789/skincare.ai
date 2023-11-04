@@ -11,39 +11,36 @@ import { db } from '@/app/HOCS/firebase';
 const Register = () => {
   const router = useRouter();
   const { data: session } = useSession();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [newItem, setNewItem] = useState({ email: "", password: "", credits: 100 });
   const [success, setSuccess] = useState(false);
-  
+  const [errorMessage, setErrorMessage] = useState(false);
 
 
   useEffect(() => {
     if (session || success) {
       router.push("/main");
-      
     }
+    console.log(success);
   }, [session,success,router]);
 
  
 
-  const handleRegister = async () => {
-
-    const userData = {
-      credits: 100,
-      email,
-      password,
-      
-    };
-
-    try {
-      const docRef = await addDoc(collection(db, 'item'), userData);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    if (newItem.email !== "" && newItem.password !== "" && newItem.credits !== "") {
+      const docRef = await addDoc(collection(db, 'item'), {
+        email: newItem.email,
+        password: newItem.password,
+        credits: newItem.credits,
+      });
       console.log('User data added with ID: ', docRef.id);
       setSuccess(true);
-    } 
-    catch (error) {
-      console.error('Error adding user data: ', error);
+      setNewItem({ email: "", password: "", credits: "" });
+      router.push("/main");
     }
-    
+    else{
+      setErrorMessage(true);
+    }
 
   };
   
@@ -62,13 +59,14 @@ const Register = () => {
   return (
     <div className="login-container">
       <h1>Register</h1>
-      <form>
-        <input type="email" placeholder="Email" value={email}
-            onChange={(e) => setEmail(e.target.value)}/>
+      <form onSubmit={handleRegister} >
+        <input type="email" placeholder="Email" value={newItem.email}
+            onChange={(e) => setNewItem({ ...newItem, email: e.target.value })}/>
 
-        <input type="password" placeholder="Password" value={password}
-            onChange={(e) => setPassword(e.target.value)} />
-        <button onClick={handleRegister} >Register</button>
+        <input type="password" placeholder="Password" value={newItem.password}
+            onChange={(e) => setNewItem({ ...newItem, password: e.target.value })}/>
+        <button type="submit">Register</button>
+        {errorMessage && <span>Please re-enter the information correctly.</span>}
       </form>
       
       <div className="or-divider">
