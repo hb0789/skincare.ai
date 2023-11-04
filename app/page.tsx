@@ -8,6 +8,7 @@ import Experts from './components/Experts'
 import Mission from './components/Mission'
 
 export default function Home() {
+  
   return (
     <>
       <Navbar />

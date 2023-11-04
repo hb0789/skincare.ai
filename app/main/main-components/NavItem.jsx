@@ -4,7 +4,7 @@ const NavItem = (props) => {
     const [open, setOpen] = useState(false);
   return (
     <div className='profile-photo-div1'>
-      <button onClick={() => setOpen(!open)}>
+      <button className='profphoto' onClick={() => setOpen(!open)}>
         <img className= "profile-photo" src={props.image ?? ""}/>
       </button>
         {open && props.children}

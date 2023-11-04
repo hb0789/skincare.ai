@@ -75,6 +75,20 @@
     color: #007BFF;
   }
   
+  .noaccount {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #151516;
+    transition: color 0.3s;
+  }
+  
+  .noaccount a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+
+  
   .or-divider {
     display: flex;
     align-items: center;
@@ -108,6 +122,16 @@
     font-size: 16px;
     transition: color 0.3s;
   }
+
+  .google-image{
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .google-image:hover{  
+      transform: scale(1.15); 
+      background-color: none !important;
+      cursor: pointer;
+  }
   
   /* Media Queries for Responsiveness */
   
@@ -120,6 +144,61 @@
   @media (max-width: 480px) {
     .login-container {
       width: 90%;
+    }
+  }
+
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .animated-circle {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: spin 2s linear infinite;
+  }
+  
+  .animated-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: bounce 1s ease infinite;
+  }
+  
+  .red {
+    background-color: #e74c3c;
+  }
+  
+  .blue {
+    background-color: #3498db;
+  }
+  
+  .green {
+    background-color: #2ecc71;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
     }
   }
   

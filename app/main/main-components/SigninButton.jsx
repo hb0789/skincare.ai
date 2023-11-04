@@ -1,5 +1,7 @@
 "use client";
 import "../styles/Signin.css";
+import "../styles/Main.css"
+import "../styles/Navbar.css";
 
 
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
@@ -53,20 +55,20 @@ const SigninButton = () => {
                 </div>}
                   <NavItem image = {session.user.image}>
                     <div className='dropdown-menu'>
-                      <div className='user-name'>
+                      <div className='user-name '>
                       {session.user.name}
                       </div>
-                      <div className='user-email'>
+                      <div className='user-email '>
                         {session.user.email}
                       </div>
-                      <div className='user-tokens'>
+                      <div className='user-tokens '>
                       {status === "authenticated" && session?.user && items.length > 0 ? (
-                    <div className="user-tokens">
+                    <div className="user-tokens ">
                         <p>{items[0].credits} <FontAwesomeIcon icon={faCoins} /> </p>
                         {/* Add more fields from itemsArr as needed */}
                       </div>
                     ) :
-                    <div className="user-tokens">
+                    <div className="user-tokens ">
                     <p> 0 <FontAwesomeIcon icon={faCoins} /> </p>
                     {/* Add more fields from itemsArr as needed */}
                   </div>}
@@ -84,25 +86,26 @@ const SigninButton = () => {
                       <button className='menu-item' onClick={e => router.push('/main/token')}>
                       <FontAwesomeIcon icon={faCoins} /> Purchase Tokens
                       </button>
-                      <div>
-                      <button onClick={() => signOut()}>
+                      
+                      <button className='menu-item' onClick={() => signOut()}>
                         <div className='main-signout-button'>
                           Sign out
                         </div>
                       </button>
-                      </div>
+                      
                     </div>
                   </NavItem>
             </div>
         )
     }
+  else{
   return (
-    <button className='ml-auto' onClick={() => signIn()}>
+    <button className='ml-auto' onClick={e => router.push('/main/login')}>
       <div className='button-34 main-signin-button'>
         Sign In
       </div>
     </button>
   )
-}
+}}
 
 export default SigninButton
