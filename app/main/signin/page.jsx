@@ -11,16 +11,23 @@ const Register = () => {
   useEffect(() => {
     if (session) {
       router.push("/main");
+      
     }
   }, [session,router]);
 
   
 
-  if (session) {
-    return null; 
+  if (typeof session === "undefined") {
+    return (
+      <div className="loading-container">
+        <div className="animated-dot red"></div>
+        <div className="animated-dot blue"></div>
+        <div className="animated-dot green"></div>
+      </div>
+      
+    );
   }
-
-
+  else if(!session){
   return (
     <div className="login-container">
       <h1>Register</h1>
@@ -44,11 +51,11 @@ const Register = () => {
         <div className='logo'>
         <img
           src="https://img.icons8.com/fluent/48/000000/google-logo.png"
-          alt="Google Logo" onClick={() => signIn()}
+          alt="Google Logo" 
         /></div>
       </div>
     </div>
   );
 };
-
+}
 export default Register;

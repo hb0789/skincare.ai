@@ -128,3 +128,57 @@
     }
   }
   
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .animated-circle {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: spin 2s linear infinite;
+  }
+  
+  .animated-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: bounce 1s ease infinite;
+  }
+  
+  .red {
+    background-color: #e74c3c;
+  }
+  
+  .blue {
+    background-color: #3498db;
+  }
+  
+  .green {
+    background-color: #2ecc71;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  
