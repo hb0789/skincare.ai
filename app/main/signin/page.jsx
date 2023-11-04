@@ -49,7 +49,7 @@ const Register = () => {
         
         
         <div className='logo'>
-        <img
+        <img className='google-image'
           src="https://img.icons8.com/fluent/48/000000/google-logo.png"
           alt="Google Logo" 
         /></div>
