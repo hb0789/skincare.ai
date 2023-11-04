@@ -4,7 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import SigninButton from './SigninButton';
 import { useRouter } from "next/navigation";
-
+import "../styles/Main.css"
 export default function Navbar() {
   
   const router = useRouter();
