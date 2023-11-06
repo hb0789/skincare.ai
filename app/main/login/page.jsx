@@ -49,7 +49,7 @@ const Login = () => {
         
         <p>login using</p>
         <div className='logo'>
-        <img
+        <img className='google-image'
           src="https://img.icons8.com/fluent/48/000000/google-logo.png"
           alt="Google Logo" onClick={() => signIn()}
         /></div>

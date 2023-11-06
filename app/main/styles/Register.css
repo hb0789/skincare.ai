@@ -114,6 +114,15 @@
     transition: color 0.3s;
   }
   
+  .google-image{
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .google-image:hover{  
+      transform: scale(1.15); 
+      background-color: none !important;
+      cursor: pointer;
+  }
   /* Media Queries for Responsiveness */
   
   @media (max-width: 768px) {
