@@ -46,7 +46,7 @@
     border: 1px solid #007BFF;
   }
   
-  button {
+  .button-login {
     width: 100%;
     padding: 10px;
     background-color: #007BFF;
@@ -58,7 +58,7 @@
     transition: background-color 0.3s;
   }
   
-  button:hover {
+  .button-login:hover {
     background-color: #0056b3;
   }
   
