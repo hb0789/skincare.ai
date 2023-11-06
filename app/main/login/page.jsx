@@ -34,7 +34,7 @@ const Login = () => {
       <form>
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <button>Login</button>
+        <button className='button-login'>Login</button>
       </form>
       <p className="forgot-password">
         <a href="../main/forgot">Forgot Password?</a>
