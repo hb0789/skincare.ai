@@ -16,7 +16,7 @@ import {
   onSnapshot,
   where,
 } from "firebase/firestore";
-import { db } from '@/app/HOCS/firebase';
+import { auth, db } from '@/app/HOCS/firebase';
 
 
 
@@ -26,6 +26,8 @@ const SigninButton = () => {
     const [items, setItems] = useState([]);
     const router = useRouter();
     const {data: session, status} = useSession();
+    
+
     useEffect(() => {
       if (status === "authenticated" && session?.user?.email) {
         const q = query(collection(db, "item"), where("email", "==", session.user.email));
@@ -37,6 +39,8 @@ const SigninButton = () => {
           console.log(itemsArr);
           setItems(itemsArr);
         });
+      }else{
+        console.log(session?.user?.email)
       }
     }, [status, session]);
     if(session && session.user)
