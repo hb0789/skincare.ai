@@ -31,9 +31,16 @@
     justify-content: center;
 }
 .profphoto{
-    background-color: transparent;
+    background-color: transparent !important;
     padding: 0;
+    transition: transform 0.2s, background-color 0.2s;
 }
+
+.profphoto:hover{
+    transform: scale(0.9); 
+    background-color: none !important;
+}
+
 .user-info {
     align-items: center;
     color: black;
@@ -42,7 +49,7 @@
 }
 
 .dropdown-menu {
-    height: 200px ;
+    height: auto ;
     width: auto;
     padding: 30px;
     padding-top: 5px ;
@@ -59,7 +66,7 @@
 }
 
 .menu-item {
-    background-color: transparent;
+    background-color: transparent !important;
     align-items: center;
     padding:0%;
     transition: transform 0.2s, background-color 0.2s;

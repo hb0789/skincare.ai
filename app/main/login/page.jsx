@@ -78,7 +78,7 @@ signInWithEmailAndPassword(auth, email, password)
       <form>
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
-        <button>Login</button>
+        <button className='button-login'>Login</button>
       </form>
       <p className="forgot-password">
         <a href="../main/forgot">Forgot Password?</a>
@@ -93,7 +93,7 @@ signInWithEmailAndPassword(auth, email, password)
         
         <p>login using</p>
         <div className='logo'>
-        <img
+        <img className='google-image'
           src="https://img.icons8.com/fluent/48/000000/google-logo.png"
           alt="Google Logo" onClick={() => signIn()}
         /></div>
