@@ -15,13 +15,9 @@ import {
   onSnapshot,
   where,
 } from "firebase/firestore";
-<<<<<<< Updated upstream
-import { db } from '@/app/HOCS/firebase';
-=======
 import {  db } from '@/app/HOCS/firebase';
 import { onAuthStateChanged } from "firebase/auth";
 import { getAuth, signOut as sg } from "firebase/auth";
->>>>>>> Stashed changes
 
 const auth = getAuth();
 
@@ -32,8 +28,7 @@ const SigninButton = () => {
     const [items, setItems] = useState([]);
     const router = useRouter();
     const {data: session, status} = useSession();
-<<<<<<< Updated upstream
-=======
+
     const [authUser,setauthUser]=useState(auth.currentUser);
     useEffect(()=>{
       setauthUser(auth.currentUser)
@@ -46,7 +41,6 @@ const SigninButton = () => {
         }
       })
     },[]);
->>>>>>> Stashed changes
     useEffect(() => {
       if (status === "authenticated" && session?.user?.email) {
         const q = query(collection(db, "item"), where("email", "==", session.user.email));
