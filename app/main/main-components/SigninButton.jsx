@@ -3,7 +3,6 @@ import "../styles/Signin.css";
 import "../styles/Main.css"
 import "../styles/Navbar.css";
 
-
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import React, {useState, useEffect} from 'react'
 import NavItem from './NavItem.jsx';
@@ -16,8 +15,15 @@ import {
   onSnapshot,
   where,
 } from "firebase/firestore";
+<<<<<<< Updated upstream
 import { db } from '@/app/HOCS/firebase';
+=======
+import {  db } from '@/app/HOCS/firebase';
+import { onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut as sg } from "firebase/auth";
+>>>>>>> Stashed changes
 
+const auth = getAuth();
 
 
 
@@ -26,6 +32,21 @@ const SigninButton = () => {
     const [items, setItems] = useState([]);
     const router = useRouter();
     const {data: session, status} = useSession();
+<<<<<<< Updated upstream
+=======
+    const [authUser,setauthUser]=useState(auth.currentUser);
+    useEffect(()=>{
+      setauthUser(auth.currentUser)
+      const listen=onAuthStateChanged(auth,(user)=>{
+        if(user){
+          setauthUser(user);
+        }
+        else{
+          setauthUser(null);
+        }
+      })
+    },[]);
+>>>>>>> Stashed changes
     useEffect(() => {
       if (status === "authenticated" && session?.user?.email) {
         const q = query(collection(db, "item"), where("email", "==", session.user.email));
@@ -38,7 +59,21 @@ const SigninButton = () => {
           setItems(itemsArr);
         });
       }
-    }, [status, session]);
+      else if (authUser) {
+        const q = query(collection(db, "item"), where("email", "==", authUser.email));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          let itemsArr = [];
+          querySnapshot.forEach((doc) => {
+            itemsArr.push({ ...doc.data(), id: doc.id });
+          });
+          console.log(itemsArr);
+          setItems(itemsArr);
+        });
+      }else{
+        console.log(authUser?.email)
+      }
+    }, [status, session,authUser]);
+
     if(session && session.user)
     {
         return(
@@ -98,6 +133,68 @@ const SigninButton = () => {
             </div>
         )
     }
+  else if(authUser){
+    return(
+      <div className=' fnav flex gap-4 ml-auto text-2xl items-center'>
+            {authUser && items.length > 0 ? (
+              <div className="credits-info">
+                <p>{items[0].credits} <FontAwesomeIcon icon={faCoins} /> </p>
+                {/* Add more fields from itemsArr as needed */}
+              </div>
+            ) :
+            <div className="credits-info">
+            <p> 0 <FontAwesomeIcon icon={faCoins} /> </p>
+            {/* Add more fields from itemsArr as needed */}
+          </div>}
+            <NavItem image="../../media/avatar-1295430_1280.png" >
+              <div className='dropdown-menu'>
+                
+              {authUser && items.length > 0 ? (
+                <div className='user-name '>
+                {items[0].name }
+                </div>):<div>name</div>}
+                
+                <div className='user-email '>
+                  
+                  {authUser.email}
+                </div>
+                <div className='user-tokens '>
+                {authUser && items.length > 0 ? (
+              <div className="user-tokens ">
+                  <p>{items[0].credits} <FontAwesomeIcon icon={faCoins} /> </p>
+                  {/* Add more fields from itemsArr as needed */}
+                </div>
+              ) :
+              <div className="user-tokens ">
+              <p> 0 <FontAwesomeIcon icon={faCoins} /> </p>
+              {/* Add more fields from itemsArr as needed */}
+            </div>}
+                </div>
+                <hr/>
+                <div className='menu-item'>
+                <FontAwesomeIcon icon={faGear} /> Settings 
+                </div>
+                <button className='menu-item' onClick={e => router.push('/main/profile')}>
+                <FontAwesomeIcon icon={faPerson} /> Profile 
+                </button>
+                <button className='menu-item' onClick={e => router.push('/main/history')}>
+                <FontAwesomeIcon icon={faHistory} /> Report History
+                </button>
+                <button className='menu-item' onClick={e => router.push('/main/token')}>
+                <FontAwesomeIcon icon={faCoins} /> Purchase Tokens
+                </button>
+                
+                <button className='menu-item' onClick={() => sg(auth).then(() => setauthUser(null)).then(router.push("/main")).catch((error) => console.error("Sign out error", error))}>
+                    <div className='main-signout-button'>
+                    Sign out
+                  </div>
+                </button>
+                
+              </div>
+            </NavItem>
+      </div>
+  )
+  }
   else{
   return (
     <button className='ml-auto' onClick={e => router.push('/main/login')}>

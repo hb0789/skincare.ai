@@ -2,12 +2,56 @@
 import '../styles/Login.css'
 
 import {React,useEffect,useState} from 'react';
+<<<<<<< Updated upstream
 import { signOut, signIn, useSession, SessionProvider } from 'next-auth/react'
 import { useRouter } from "next/navigation";
 
 const Login = () => {
   const router = useRouter();
   const { data: session } = useSession();
+=======
+import {  signIn, useSession,SessionProvider } from 'next-auth/react'
+import { useRouter } from "next/navigation";
+import {  getAuth,signInWithEmailAndPassword } from 'firebase/auth'; 
+import { auth } from '@/app/HOCS/firebase';
+
+
+const Login = () => {
+  const router = useRouter();
+  const {data: session} = useSession();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+      const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    console.log(userCredential)
+    const user = userCredential.user;
+    if (user!=="") {
+          // You can perform additional actions here if needed
+          // For example, storing user data in local storage
+          localStorage.setItem('token', user.accessToken);
+          localStorage.setItem('user', JSON.stringify(user));
+          
+          // Redirect to the main page after successful login
+          router.push('/main');
+        }
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
+  });
+    
+    
+}
+
+>>>>>>> Stashed changes
 
   useEffect(() => {
     if (session) {

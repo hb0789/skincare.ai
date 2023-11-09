@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
-
 const NavItem = (props) => {
     const [open, setOpen] = useState(false);
   return (
     <div className='profile-photo-div1'>
       <button className='profphoto' onClick={() => setOpen(!open)}>
-        <img className= "profile-photo" src={props.image ?? ""}/>
+        <img className= "profile-photo" src={props.image ?? ""} alt='image'/>
       </button>
         {open && props.children}
       
