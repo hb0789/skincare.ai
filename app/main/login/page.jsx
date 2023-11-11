@@ -2,9 +2,9 @@
 import '../styles/Login.css'
 
 import {React,useEffect,useState} from 'react';
-import {  signIn, useSession } from 'next-auth/react'
+import {  signIn, useSession,SessionProvider } from 'next-auth/react'
 import { useRouter } from "next/navigation";
-import {  signInWithEmailAndPassword } from 'firebase/auth'; 
+import {  getAuth,signInWithEmailAndPassword } from 'firebase/auth'; 
 import { auth } from '@/app/HOCS/firebase';
 
 
@@ -16,18 +16,32 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log(userCredential);
-      const user = userCredential.user;
-      localStorage.setItem('token', user.accessToken);
-      localStorage.setItem('user', JSON.stringify(user));
-      router.push("/main");
-    } catch (error) {
-      console.error(error);
-    }
-    console.log("logged in")
-  }
+    
+      const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    console.log(userCredential)
+    const user = userCredential.user;
+    if (user!="") {
+          // You can perform additional actions here if needed
+          // For example, storing user data in local storage
+          localStorage.setItem('token', user.accessToken);
+          localStorage.setItem('user', JSON.stringify(user));
+          
+          // Redirect to the main page after successful login
+          router.push('/main');
+        }
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
+  });
+    
+    
+}
 
 
   useEffect(() => {
@@ -55,19 +69,27 @@ const Login = () => {
     <div className="login-container">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input id="email"
-                  placeholder='Email'
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  required />
-        <input type="password" name="password" placeholder="Password" id="password"
-                  autoComplete="current-password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  required/>
-        <button className='button-login' >Login</button>
-      </form>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="Email"
+          />
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autoComplete="current-password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder="Password"
+          />
+          <button className="button-login">Login</button>
+        </form>
+        
       <p className="forgot-password">
         <a href="../main/forgot">Forgot Password?</a>
       </p>
