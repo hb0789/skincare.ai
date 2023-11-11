@@ -15,10 +15,26 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "@/app/HOCS/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut as sg } from "firebase/auth";
+const auth = getAuth();
 
 export default function AnalysisHistory() {
   const [items, setItems] = useState([]);
   const {data: session, status} = useSession();
+  const [authUser,setauthUser]=useState(auth.currentUser);
+
+  useEffect(()=>{
+    const listen=onAuthStateChanged(auth,(user)=>{
+      if(user){
+        setauthUser(user);
+      }
+      else{
+        setauthUser(null);
+      }
+    })
+  },[]);
+
   useEffect(() => {
     if (status === "authenticated" && session?.user?.email) {
       const q = query(collection(db, "session"), where("email", "==", session.user.email));
@@ -30,8 +46,18 @@ export default function AnalysisHistory() {
         console.log(itemsArr);
         setItems(itemsArr);
       });
-    }
-  }, [status, session]);
+    }else if (authUser!=null) {
+        const q = query(collection(db, "session"), where("email", "==", authUser.email));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+          let itemsArr = [];
+          querySnapshot.forEach((doc) => {
+            itemsArr.push({ ...doc.data(), id: doc.id });
+          });
+          console.log(itemsArr);
+          setItems(itemsArr);
+        });
+      }
+  }, [status, session,authUser]);
 
   const [selectedReport, setSelectedReport] = useState(null);
 
