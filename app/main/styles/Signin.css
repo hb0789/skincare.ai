@@ -47,7 +47,7 @@
   margin-top: 7px;
 }
 .dropdown-menu{
-  min-width: 17% !important;
+  min-width: 14vw !important;
   background-color: #493654!important;
   color:rgb(111, 243, 183);
   height: auto;
@@ -82,7 +82,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   width: fit-content;
-  margin-left:12%;
+  margin-left:2vw;
   
   word-break: break-word;
   border: 0;
