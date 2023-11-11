@@ -5,10 +5,8 @@ import { signIn, useSession, SessionProvider } from 'next-auth/react'
 import { useRouter } from "next/navigation";
 import { collection, addDoc } from 'firebase/firestore';
 import {   getDocs, query, where } from 'firebase/firestore';
+
 import { db } from '@/app/HOCS/firebase';
-import { redirect } from 'next/navigation';
-import {auth} from "@/app/HOCS/firebase"
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Register = () => {
   const router = useRouter();
@@ -40,7 +38,6 @@ const Register = () => {
       if (userExists) {
         setExists(true);
       } else {
-        createUserWithEmailAndPassword(auth, newItem.email, newItem.password);
       const docRef = await addDoc(collection(db, 'item'), {
         email: newItem.email,
         password: newItem.password,

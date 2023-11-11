@@ -31,10 +31,8 @@
     "react": "latest",
     "react-countup": "^6.4.2",
     "react-dom": "latest",
-    "react-firebase-hooks": "^5.1.1",
     "react-icons": "^4.11.0",
     "react-parallax": "^3.5.1",
-    "react-router-dom": "^6.18.0",
     "react-scroll": "^1.8.9",
     "react-scroll-trigger": "^0.6.14",
     "stripe": "^14.1.0"
