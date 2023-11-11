@@ -46,7 +46,7 @@ const Register = () => {
         password: newItem.password,
         credits: newItem.credits,
         name:newItem.name,
-        agw:newItem.age,
+        age:newItem.age,
       });
       console.log('User data added with ID: ', docRef.id);
       setSuccess(true);
