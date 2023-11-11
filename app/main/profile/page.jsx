@@ -118,7 +118,7 @@ const Page = () => {
           <h2>User Information</h2>
           <p>Name: {items[0]?.name}</p>
           <p>Email: {items[0]?.email}</p>
-          <p>Age: {items[0]?.agw}</p>
+          <p>Age: {items[0]?.age}</p>
           {/* Add more fields from itemsArr as needed */}
         </div>
       ) : null}
