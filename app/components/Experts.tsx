@@ -4,7 +4,6 @@ import { Parallax, Background } from "react-parallax";
 import BackgroundPhoto from "../media/download-vertical.png";
 import "../Style/MainStyle.css";
 import "../Style/ServiceStyles.css";
-import ContactForm from "./ContactForm";
 
 export default function Experts() {
   const imageUrl = BackgroundPhoto.src;
@@ -37,7 +36,6 @@ export default function Experts() {
             bgClassName="experts-background"
             strength={400}
           >
-          <ContactForm/>
           </Parallax>
         </div>
       </div>

@@ -85,7 +85,7 @@ export default function AnalysisHistory() {
         <h1 className="text-4xl mb-6 text-center font-semibold">Your Report History</h1>
         <ul className="w-full">
           <li className="flex justify-between items-center bg-gray-200 p-4 mb-2 rounded-md">
-            <span className="w-1/4 font-semibold">Session ID</span>
+            <span className="w-1/4 font-semibold">Billing ID</span>
             <span className="w-1/4 font-semibold">Time</span>
             <span className="w-1/4 font-semibold">Disease</span>
             <span className="w-1/4 text-center font-semibold">Actions</span>
