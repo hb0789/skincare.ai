@@ -56,19 +56,6 @@ export default function Main() {
             </div>
           </div>
         </div>
-        <div className="footer-left">
-          <div className="footer-title">
-            THE TEAM <br />
-          </div>
-          <div className="footer-text">
-            Hardik Bhatia <br />
-            Arshlaan Siddiquie <br />
-            Mridul Jain <br />
-            Somil Agarwal <br />
-            Sahil Murhekar <br />
-            Sweta Soundarya Das <br />
-          </div>
-        </div>
       </div>
     </Parallax>
   );

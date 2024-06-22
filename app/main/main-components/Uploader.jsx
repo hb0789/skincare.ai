@@ -149,9 +149,9 @@
                   )}
                   {diseaseData && (
                     <div className="disease-data">
-                      <h2>Disease Classification</h2>
-                      <p>{diseaseData.prediction}</p>
-                      <p>{diseaseData.accuracy}</p>
+                      <h2><br/></h2>
+                      <p>Disease: {diseaseData.prediction}</p>
+                      <p>Estimated accuracy: {diseaseData.accuracy}</p>
                     </div>
                   )}
                 </span>
